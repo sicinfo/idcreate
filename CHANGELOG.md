@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+###[0.2.2] 2015-05-10
+- corrige logica para gerar id
+
 ###[0.2.1] 2018-10-25 
 - melhoria do código
 
