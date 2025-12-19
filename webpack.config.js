@@ -1,6 +1,6 @@
 
 module.exports = ({
-    production = false,
+    production = true,
     development = false,
     clean = false
 }) => {
