@@ -10,33 +10,44 @@
  */
 
 const test = require('tape');
-const newId = require('../lib/idcreate').newId;
+const { newId, toTime } = require('../idcreate')
 
-const date_now = 1510157518153;
-const math_random = 0.922;
-const newid_result = '1HJ3OFIPK1';
+const date_now = 1647174083631;
+const newid_result = 'SzxmafX';
 
-test('newId', t => {
-  t.assert(newId(date_now, math_random) == newid_result, 'OK');
+test('newId - 1', t => {
+  newId.call(this)
+  t.assert(newId.call(this) && newId.call(this, date_now) === newid_result, 'OK');
   t.end();
 });
 
-test('newId', t => {
-  t.assert(newId(0, 0) == '0000000000', 'OK');
+test('newId - 2', t => {
+  t.assert(newId.call(this, 0) === '0', 'OK');
   t.end();
 });
 
-test('newId', t => {
-  t.assert(newId(1, 0) == '000000002S', 'OK');
+test('newId - 3', t => {
+  t.assert(newId.call(this, 1) === '1', 'OK');
+  t.assert(newId.call(this, 1) !== '1', 'OK');
   t.end();
 });
 
-test('newId', t => {
-  t.assert(newId(0, 1) == '000000002S', 'OK');
+test('newId - 4', t => {
+  t.assert(newId.call(this, 2) === '2', 'OK');
   t.end();
 });
 
-test('newId', t => {
-  t.assert(newId(1, 1) == '000000005K', 'OK');
-  t.end();
-});
+test('toTime - 5', t => {
+  t.assert(toTime(newid_result) == date_now, 'OK')
+  t.end()
+})
+
+test('toTime 6', t => {
+  t.assert(toTime('0') == 0, 'OK')
+  t.end()
+})
+
+test('toTime 7', t => {
+  t.assert(toTime() == 0, 'OK')
+  t.end()
+})
