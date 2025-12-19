@@ -1,1 +1,6 @@
-test
+test/
+src/
+.gitignore
+.npmignore
+webpack.config.js
+idcreate.code-workspace
