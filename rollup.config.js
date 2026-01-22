@@ -5,7 +5,7 @@
 module.exports = ({ environment: env = '' }) => {
 
   return [
-    ['src/index.js', `dist/index.js`],
+    ['src/idcreate.js', `dist/index.js`],
     ['test/test.js', `test/test.spec.js`]
   ].map(([input, file]) => ({ 
     input, 
