@@ -3,6 +3,6 @@
   "version": "0.3.0",
   "main": "idcreate.js",
   "scripts": {
-    "build": "webpack"
+    "build": "rollup --config rollup.config.js"
   }
 }
